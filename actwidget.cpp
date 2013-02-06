@@ -16,20 +16,6 @@ void ActTab::showCreateDialog()
     act->show();
 }
 
-ActDialog::ActDialog(quint32 aId, QWidget *parent) :
-    QDialog(parent, Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint),
-    ui(new Ui::ActDialog)
-{
-    ui->setupUi(this);
-    this->setWindowTitle(tr("Акт приёма-передачи"));
-    ui->dateEdit->setCalendarPopup(true);
-    ui->dateEdit->setDate(QDate::currentDate());
-}
-
-ActDialog::~ActDialog()
-{
-}
-
 void ActTab::parseAndShowData(QSqlQuery aQuery)
 {
 }
@@ -47,6 +33,20 @@ void ActTab::showEditDialog()
 }
 
 void ActTab::deleteData()
+{
+}
+
+ActDialog::ActDialog(quint32 aId, QWidget *parent) :
+    QDialog(parent, Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowMinMaxButtonsHint),
+    ui(new Ui::ActDialog)
+{
+    ui->setupUi(this);
+    this->setWindowTitle(tr("Акт приёма-передачи"));
+    ui->dateEdit->setCalendarPopup(true);
+    ui->dateEdit->setDate(QDate::currentDate());
+}
+
+ActDialog::~ActDialog()
 {
 }
 

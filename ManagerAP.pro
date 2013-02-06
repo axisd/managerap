@@ -6,9 +6,10 @@
 
 QT       += core gui sql
 
-TARGET = ManagerAP
-TEMPLATE = app
+CONFIG(release, debug|release):TARGET = ../bin/ManagerAP_r
+else:TARGET = ../bin/ManagerAP_d
 
+TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwidget.cpp \
@@ -28,7 +29,8 @@ HEADERS  += mainwidget.h \
     header.h \
     clientwidget.h \
     managerbd.h \
-    nastrwidget.h
+    nastrwidget.h \
+    interfacewidget.h
 
 RESOURCES += \
     imgres.qrc

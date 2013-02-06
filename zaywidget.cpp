@@ -1,11 +1,11 @@
 #include "zaywidget.h"
 #include "ui_zaywidget.h"
 
-ZayTab::ZayTab(QWidget *parent) :
-    QWidget(parent),
+ZayTab::ZayTab() :
     ui(new Ui::ZayTab)
 {
   ui->setupUi(this);
+  connect(ui->createButton,SIGNAL(clicked()),this,SLOT(showCreateDialog()));
 }
 
 void ZayTab::showCreateDialog()

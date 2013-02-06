@@ -2,13 +2,14 @@
 #define ZAYWIDGET_H
 
 #include "header.h"
+#include "interfacewidget.h"
 
 // Вкладка Заявки
-class ZayTab : public QWidget
+class ZayTab : public WidgetInterface
 {
     Q_OBJECT
 public:
-    explicit ZayTab(QWidget *parent = 0);
+    explicit ZayTab();
 
 signals:
     void needQuery(QString aQuery);
@@ -16,12 +17,11 @@ signals:
 public slots:
     void parseAndShowData(QSqlQuery aQuery);
     void showPreview();
-
-private:
-    bool init();
     void showCreateDialog();
     void showEditDialog();
 
+private:
+    bool init();
     void deleteData();
 
     Ui::ZayTab *ui;
